@@ -1,0 +1,38 @@
+{
+  "name": "xsltproc",
+  "version": "0.0.1",
+  "description": "Wrapper for xsltproc.",
+  "homepage": "https://github.com/ilyar/xsltproc",
+  "bugs": "https://github.com/ilyar/xsltproc/issues",
+  "author": {
+    "name": "Ilya Rogov",
+    "email": "ilyar.software@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ilyar/xsltproc"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "main": "lib/xsltproc.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "which": "^1.0.5",
+    "log": "^1.4.0"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-watch": "~0.5.0",
+    "load-grunt-tasks": "~0.2.0",
+    "mocha": "~1.17.1",
+    "time-grunt": "~0.1.1",
+    "jshint-stylish": "~0.1.3",
+    "grunt-mocha-test": "~0.7.0",
+    "chai": "^1.9.0"
+  }
+}
