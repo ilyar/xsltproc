@@ -1,6 +1,6 @@
 {
   "name": "xsltproc",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Wrapper for xsltproc.",
   "homepage": "https://github.com/ilyar/xsltproc",
   "bugs": "https://github.com/ilyar/xsltproc/issues",

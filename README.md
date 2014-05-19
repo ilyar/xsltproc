@@ -35,6 +35,9 @@ xsltproc.transform('stylesheet.xsl', 'data.xml', {
 ```
 
 ## Release History
+
+- **v0.0.2**:
+    - update packages
 - **v0.0.1**:
     - initial release
     
