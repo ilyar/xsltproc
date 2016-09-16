@@ -8,7 +8,14 @@ it("should return the correct TXT", function (done) {
 
   var xsl = '../xsltproc/test/fixtures/txt.xsl',
       xml = '../xsltproc/test/fixtures/data.xml',
-      xslt = xsltproc.transform(xsl, xml);
+      opts = {
+          "output": "test/fixtures/test.html",
+          "stringparam": {
+             "key": 'title',
+             "val": 'This is a single parameter passed as subtitle----anvidsahviulasdhvklasdbcuw'
+          }
+      },
+      xslt = xsltproc.transform(xsl, xml, opts);
 
   xslt.on('exit', function (code) {
     chai.assert.equal(code, 0, 'xsltproc process exited with code ' + code);
