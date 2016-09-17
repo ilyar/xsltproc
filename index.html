@@ -1,74 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
+    <meta charset="UTF-8">
     <title>Xsltproc by ilyar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
-    <header>
-      <div class="inner">
-        <h1>Xsltproc</h1>
-        <h2>Wrapper for xsltproc.</h2>
-        <a href="https://github.com/ilyar/xsltproc" class="button"><small>View project on</small>GitHub</a>
-      </div>
-    </header>
+    <section class="page-header">
+      <h1 class="project-name">Xsltproc</h1>
+      <h2 class="project-tagline">Wrapper for xsltproc.</h2>
+      <a href="https://github.com/ilyar/xsltproc" class="btn">View on GitHub</a>
+      <a href="https://github.com/ilyar/xsltproc/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/ilyar/xsltproc/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h1>
-<a name="xsltproc--" class="anchor" href="#xsltproc--"><span class="octicon octicon-link"></span></a>xsltproc <a href="http://travis-ci.org/ilyar/xsltproc"><img src="https://secure.travis-ci.org/ilyar/xsltproc.png?branch=master" alt="Build Status"></a> <a href="http://badge.fury.io/js/xsltproc"><img src="https://badge.fury.io/js/xsltproc.png" alt="NPM version"></a>
+    <section class="main-content">
+      <h1>
+<a id="xsltproc--" class="anchor" href="#xsltproc--" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>xsltproc <a href="http://travis-ci.org/ilyar/xsltproc"><img src="https://secure.travis-ci.org/ilyar/xsltproc.png?branch=master" alt="Build Status"></a> <a href="http://badge.fury.io/js/xsltproc"><img src="https://badge.fury.io/js/xsltproc.png" alt="NPM version"></a>
 </h1>
 
 <p>Wrapper for xsltproc.</p>
 
 <h2>
-<a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started</h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting Started</h2>
 
 <p>First install the xsltproc if not already installed on your system read <a href="http://www.sagehill.net/docbookxsl/InstallingAProcessor.html">installing an XSLT processor</a>.
 Install the module with: <code>npm install xsltproc --save</code></p>
 
-<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">xsltproc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'xsltproc'</span><span class="p">)</span>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> xsltproc <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>xsltproc<span class="pl-pds">'</span></span>)
 
-<span class="kd">var</span> <span class="nx">xslt</span> <span class="o">=</span> <span class="nx">xsltproc</span><span class="p">.</span><span class="nx">transform</span><span class="p">(</span><span class="s1">'stylesheet.xsl'</span><span class="p">,</span> <span class="s1">'data.xml'</span><span class="p">);</span>
+<span class="pl-k">var</span> xslt <span class="pl-k">=</span> <span class="pl-smi">xsltproc</span>.<span class="pl-en">transform</span>(<span class="pl-s"><span class="pl-pds">'</span>stylesheet.xsl<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>data.xml<span class="pl-pds">'</span></span>);
 
-<span class="nx">xslt</span><span class="p">.</span><span class="nx">stdout</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'data'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'xsltproc stdout: '</span> <span class="o">+</span> <span class="nx">data</span><span class="p">);</span>
-<span class="p">});</span>
+<span class="pl-smi">xslt</span>.<span class="pl-smi">stdout</span>.<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">'</span>data<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> (<span class="pl-smi">data</span>) {
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>xsltproc stdout: <span class="pl-pds">'</span></span> <span class="pl-k">+</span> data);
+});
 
-<span class="nx">xslt</span><span class="p">.</span><span class="nx">stderr</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'data'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'xsltproc stderr: '</span> <span class="o">+</span> <span class="nx">data</span><span class="p">);</span>
-<span class="p">});</span>
+<span class="pl-smi">xslt</span>.<span class="pl-smi">stderr</span>.<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">'</span>data<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> (<span class="pl-smi">data</span>) {
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>xsltproc stderr: <span class="pl-pds">'</span></span> <span class="pl-k">+</span> data);
+});
 
-<span class="nx">xslt</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'exit'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">code</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'xsltproc process exited with code '</span> <span class="o">+</span> <span class="nx">code</span><span class="p">);</span>
-<span class="p">});</span>
-</pre></div>
+<span class="pl-smi">xslt</span>.<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">'</span>exit<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> (<span class="pl-smi">code</span>) {
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>xsltproc process exited with code <span class="pl-pds">'</span></span> <span class="pl-k">+</span> code);
+});</pre></div>
 
-<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">xsltproc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'xsltproc'</span><span class="p">)</span>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> xsltproc <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>xsltproc<span class="pl-pds">'</span></span>)
 
-<span class="nx">xsltproc</span><span class="p">.</span><span class="nx">transform</span><span class="p">(</span><span class="s1">'stylesheet.xsl'</span><span class="p">,</span> <span class="s1">'data.xml'</span><span class="p">,</span> <span class="p">{</span>
-  <span class="s2">"profile"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"output"</span><span class="o">:</span> <span class="s2">"test.txt"</span>
-<span class="p">});</span>
-</pre></div>
+<span class="pl-smi">xsltproc</span>.<span class="pl-en">transform</span>(<span class="pl-s"><span class="pl-pds">'</span>stylesheet.xsl<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>data.xml<span class="pl-pds">'</span></span>, {
+  <span class="pl-s"><span class="pl-pds">"</span>profile<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">true</span>,
+  <span class="pl-s"><span class="pl-pds">"</span>output<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>test.txt<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>stringparam<span class="pl-pds">"</span></span><span class="pl-k">:</span> {
+    <span class="pl-s"><span class="pl-pds">"</span>key<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>paramName<span class="pl-pds">'</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>val<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>paramValue<span class="pl-pds">'</span></span>,
+  },
+});</pre></div>
 
 <h2>
-<a name="release-history" class="anchor" href="#release-history"><span class="octicon octicon-link"></span></a>Release History</h2>
+<a id="release-history" class="anchor" href="#release-history" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Release History</h2>
 
 <ul>
+<li>
+<strong>v0.0.3</strong>:
+
+<ul>
+<li>added stringparameter <a href="https://github.com/spino9330" class="user-mention">@spino9330</a>
+</li>
+</ul>
+</li>
+<li>
+<strong>v0.0.2</strong>:
+
+<ul>
+<li>update packages</li>
+</ul>
+</li>
 <li>
 <strong>v0.0.1</strong>:
 
@@ -76,28 +84,20 @@ Install the module with: <code>npm install xsltproc --save</code></p>
 <li>initial release</li>
 </ul>
 </li>
-</ul><h2>
-<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
 
 <p>Copyright (c) 2014 Ilya Rogov. Licensed under the MIT license.</p>
-        </section>
 
-        <aside id="sidebar">
-          <a href="https://github.com/ilyar/xsltproc/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/ilyar/xsltproc/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/ilyar/xsltproc">Xsltproc</a> is maintained by <a href="https://github.com/ilyar">ilyar</a>.</span>
 
-          <p class="repo-owner"><a href="https://github.com/ilyar/xsltproc"></a> is maintained by <a href="https://github.com/ilyar">ilyar</a>.</p>
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
 
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
-    </div>
+    </section>
 
             <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
