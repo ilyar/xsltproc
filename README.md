@@ -30,12 +30,17 @@ var xsltproc = require('xsltproc')
 
 xsltproc.transform('stylesheet.xsl', 'data.xml', {
   "profile": true,
-  "output": "test.txt"
+  "output": "test.txt",
+  "stringparam": {
+    "key": 'paramName',
+    "val": 'paramValue',
+  },
 });
 ```
 
 ## Release History
-
+- **v0.0.3**:
+    - added stringparameter @spino9330
 - **v0.0.2**:
     - update packages
 - **v0.0.1**:
