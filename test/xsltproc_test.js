@@ -10,10 +10,16 @@ it("should return the correct TXT", function (done) {
       xml = '../xsltproc/test/fixtures/data.xml',
       opts = {
           "output": "test/fixtures/test.html",
-          "stringparam": {
-             "key": 'title',
-             "val": 'This is a single parameter passed as subtitle----anvidsahviulasdhvklasdbcuw'
-          }
+          "stringparam": [
+            {
+              "key": 'title',
+              "val": 'This is a single parameter passed as subtitle----anvidsahviulasdhvklasdbcuw'
+            },
+            {
+              "key": 'anotherTitle',
+              "val": 'This is a another single parameter passed'
+            }
+          ]
       },
       xslt = xsltproc.transform(xsl, xml, opts);
 
