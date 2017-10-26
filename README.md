@@ -29,6 +29,8 @@ xslt.on('exit', function (code) {
 });
 ```
 
+Example using a string parameter:
+
 ```javascript
 var xsltproc = require('xsltproc')
 
@@ -36,13 +38,37 @@ xsltproc.transform('stylesheet.xsl', 'data.xml', {
   "profile": true,
   "output": "test.txt",
   "stringparam": {
-    "key": 'paramName',
-    "val": 'paramValue',
+    "key": 'title',
+    "val": 'This is a single parameter passed as subtitle----anvidsahviulasdhvklasdbcuw'
   },
 });
 ```
 
+It is also possible to use multple string parameters:
+
+```javascript
+var xsltproc = require('xsltproc')
+
+xsltproc.transform('stylesheet.xsl', 'data.xml', {
+  "profile": true,
+  "output": "test.txt",
+  "stringparam": [
+    {
+      "key": 'title',
+      "val": 'This is a single parameter passed as subtitle----anvidsahviulasdhvklasdbcuw'
+    },
+    {
+      "key": 'anotherTitle',
+      "val": 'This is a another single parameter passed'
+    }
+  ],
+});
+```
+
 ## Release History
+
+- **v0.0.4**:
+    - added multiple string parameters support @rrgarciach
 - **v0.0.3**:
     - added stringparameter @spino9330
 - **v0.0.2**:
