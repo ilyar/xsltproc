@@ -25,6 +25,23 @@ xslt.on('exit', function (code) {
 });
 ```
 
+Example using a string parameter:
+
+```javascript
+var xsltproc = require('xsltproc')
+
+xsltproc.transform('stylesheet.xsl', 'data.xml', {
+  "profile": true,
+  "output": "test.txt",
+  "stringparam": {
+    "key": 'title',
+    "val": 'This is a single parameter passed as subtitle----anvidsahviulasdhvklasdbcuw'
+  },
+});
+```
+
+It is also possible to use multple string parameters:
+
 ```javascript
 var xsltproc = require('xsltproc')
 
