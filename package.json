@@ -16,7 +16,7 @@
   "main": "lib/xsltproc.js",
   "scripts": {
     "lint": "jshint",
-    "test-functional": "nyc --reporter=text-lcov mocha",
+    "test-functional": "nyc --reporter=html --reporter=text mocha",
     "test-ci": "npm run lint && nyc --reporter=text-lcov mocha > test/lcov.info",
     "test": "npm run lint && npm run test-functional"
   },
