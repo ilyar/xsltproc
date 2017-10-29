@@ -16,7 +16,8 @@
   "main": "lib/xsltproc.js",
   "scripts": {
     "lint": "jshint",
-    "test-functional": "mocha",
+    "test-functional": "nyc --reporter=text-lcov mocha",
+    "test-ci": "npm run lint && nyc --reporter=text-lcov mocha > test/lcov.info",
     "test": "npm run lint && npm run test-functional"
   },
   "engines": {
@@ -26,8 +27,10 @@
     "which": "^1.3.0"
   },
   "devDependencies": {
-    "jshint": "^2.9.5",
     "chai": "^4.1.2",
-    "mocha": "^4.0.1"
+    "coveralls": "^3.0.0",
+    "jshint": "^2.9.5",
+    "mocha": "^4.0.1",
+    "nyc": "^11.2.1"
   }
 }
