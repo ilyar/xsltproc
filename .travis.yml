@@ -1,8 +1,19 @@
 language: node_js
+env:
+  global:
+    - CC_TEST_REPORTER_ID=960d83e13acb4f5c060e56ae9d9bb34ee03dcee990dc1b79c3836f666563a292
 node_js:
-  - '0.10'
-  - '0.12'
-  - 'iojs'
+  - '4'
+  - '6'
+  - '8'
 before_script:
-  - npm install -g grunt-cli
   - sudo apt-get install -qq -y xsltproc
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+script:
+  - npm run test-ci
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - ./cc-test-reporter format-coverage -t lcov ./test/lcov.info
+  - ./cc-test-reporter upload-coverage
