@@ -12,11 +12,7 @@
     "type": "git",
     "url": "https://github.com/ilyar/xsltproc"
   },
-  "licenses": [
-    {
-      "type": "MIT"
-    }
-  ],
+  "license": "MIT",
   "main": "lib/xsltproc.js",
   "scripts": {
     "lint": "jshint",
