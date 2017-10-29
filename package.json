@@ -21,6 +21,9 @@
   "scripts": {
     "test": "grunt test"
   },
+  "engines": {
+    "node": ">=4"
+  },
   "dependencies": {
     "which": "~1.0.5"
   },
