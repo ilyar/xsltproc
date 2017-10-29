@@ -1,4 +1,8 @@
-# xsltproc [![Build Status](https://secure.travis-ci.org/ilyar/xsltproc.png?branch=master)](http://travis-ci.org/ilyar/xsltproc) [![NPM version](https://badge.fury.io/js/xsltproc.png)](http://badge.fury.io/js/xsltproc)
+# xsltproc
+
+[![Build Status](https://secure.travis-ci.org/ilyar/xsltproc.svg?branch=master)](http://travis-ci.org/ilyar/xsltproc)
+[![Test Coverage](https://codeclimate.com/github/ilyar/xsltproc/badges/coverage.svg)](https://codeclimate.com/github/ilyar/xsltproc/coverage)
+[![NPM version](https://badge.fury.io/js/xsltproc.svg)](http://badge.fury.io/js/xsltproc)
 
 Wrapper for xsltproc.
 
