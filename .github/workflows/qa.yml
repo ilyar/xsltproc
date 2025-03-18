@@ -1,0 +1,39 @@
+name: qa
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.github/**'
+      - 'lib/**'
+      - 'test/**'
+      - '.jshintrc'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'tsconfig.json'
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - name: Install xsltproc
+        run: sudo apt install -qq -y xsltproc
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+      - run: |
+          npm install
+          npm run test-ci
+      - name: Code Coverage Report
+        uses: romeovs/lcov-reporter-action@v0.2.16
+        with:
+          lcov-file: ./test/lcov.info
+          github-token: ${{ secrets.GITHUB_TOKEN }}

@@ -1,14 +1,12 @@
 # xsltproc
 
-[![Build Status](https://secure.travis-ci.org/ilyar/xsltproc.svg?branch=master)](http://travis-ci.org/ilyar/xsltproc)
-[![Test Coverage](https://codeclimate.com/github/ilyar/xsltproc/badges/coverage.svg)](https://codeclimate.com/github/ilyar/xsltproc/coverage)
 [![NPM version](https://badge.fury.io/js/xsltproc.svg)](http://badge.fury.io/js/xsltproc)
 
 Wrapper for xsltproc.
 
 ## Getting Started
 
-First install the xsltproc if not already installed on your system read [installing an XSLT processor](http://www.sagehill.net/docbookxsl/InstallingAProcessor.html).
+First install the `xsltproc` if not already installed for example `apt install xsltproc`
 Install the module with: `npm install xsltproc --save`
 
 ```javascript
@@ -77,4 +75,4 @@ xsltproc.transform('stylesheet.xsl', 'data.xml', {
     - initial release
     
 ## License
-Copyright (c) 2014 Ilya Rogov. Licensed under the MIT license.
+Copyright (c) 2014 Ilyar. Licensed under the MIT license.
