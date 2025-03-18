@@ -2,13 +2,13 @@
 
 [![NPM version](https://badge.fury.io/js/xsltproc.svg)](http://badge.fury.io/js/xsltproc)
 
-Wrapper for xsltproc.
+Wrapper for xsltproc
 
 ## Getting Started
 
 First install the `xsltproc` if not already installed for example `apt install xsltproc`
-Install the module with: `npm install xsltproc --save`
 
+Install the module with: `npm install xsltproc --save`
 ```javascript
 var xsltproc = require('xsltproc')
 
@@ -75,4 +75,4 @@ xsltproc.transform('stylesheet.xsl', 'data.xml', {
     - initial release
     
 ## License
-Copyright (c) 2014 Ilyar. Licensed under the MIT license.
+Copyright (c) 2014 Ilyar Licensed under the MIT license
