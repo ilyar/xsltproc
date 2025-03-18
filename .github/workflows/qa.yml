@@ -32,8 +32,3 @@ jobs:
       - run: |
           npm install
           npm run test-ci
-      - name: Code Coverage Report
-        uses: romeovs/lcov-reporter-action@v0.2.16
-        with:
-          lcov-file: ./test/lcov.info
-          github-token: ${{ secrets.GITHUB_TOKEN }}
